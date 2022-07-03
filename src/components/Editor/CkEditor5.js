@@ -10,7 +10,7 @@ class CkEditor5 extends Component {
 
         return (
             <div className="CkEditor5">
-                <h2>Using CKEditor 5 build in React</h2>
+                <h2>Using CKEditor 5 build in Reactww</h2>
                 <input className="title-input" type='text' placeholder='제목' />
                 <CKEditor
                     editor={ ClassicEditor }
