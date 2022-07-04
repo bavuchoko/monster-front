@@ -1,7 +1,7 @@
 import React, {Component, useState} from "react";
 import ScrollSideMenu from "../../../components/SideMenu/ScrollSideMenu";
 import CkEditor5 from "../../../components/Editor/CkEditor5";
-
+import EditComponent from "../../../components/Editor/EditComponent";
 class CreateJavaComponent extends Component{
 
     render() {
@@ -15,7 +15,7 @@ class CreateJavaComponent extends Component{
                 </div>
                 <div className="width-100per-200p mar-auto-0">
                     <div className="padding-trl-80p">
-                    <CkEditor5 />
+                    <EditComponent />
                     </div>
                 </div>
             </div>
