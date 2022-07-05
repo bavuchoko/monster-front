@@ -5,6 +5,7 @@ import SystemNavBar from "./components/Headers/SystemNavBar.js";
 
 import Board from "./route/Board.js";
 import Document from "./route/Document.js";
+import Member from "./route/Member";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
               <Route path="/" element={<Board />} />
               <Route path="/board/*" element={<Board />} />
               <Route path="/document/*" element={<Document />} />
+              <Route path="/member/*" element={<Member />} />
           </Routes>
       </BrowserRouter>
   );

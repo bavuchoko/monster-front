@@ -27,14 +27,14 @@ const ScrollDropDown = () => {
                 closeDropdownPopover()
             }}
         >
-            <a
+            <Link
                 className=""
-                href="#pablo"
+                to="/board/java"
                 ref={btnDropdownRef}
 
             >
                 두루마리
-            </a>
+            </Link>
             <div
                 className={
                     (dropdownPopoverShow ? "block drop-menu" : "hidden ") +

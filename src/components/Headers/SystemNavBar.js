@@ -4,6 +4,7 @@ import samlllogo from '../../assets/image/samlllogo.png';
 import github from '../../assets/image/github.png';
 import magnifier from '../../assets/image/magnifier.png';
 import ScrollDropDown from "../Dropdowns/ScrollDropDown.js";
+import {Link} from "react-router-dom";
 
 export default function Navbar(props) {
 
@@ -17,11 +18,15 @@ export default function Navbar(props) {
                        <div className="width-150p height-100per  dsip-inlineblock"><img  className="hover-btn" src={samlllogo} /></div>
                        <div className="float-right">
                            <ul className="noulstyle disp-flex">
-                               <li className="noulstyle nav-div-ul-li">
-                                   <p className="nav-ul-li-p hover-btn">로그인</p>
+                               <li className="noulstyle nav-div-ul-li top-bar-li">
+                                   <Link className="nav-ul-li-p hover-btn " to="/member/login">
+                                       로그인
+                                   </Link>
                                </li>
-                               <li className="noulstyle nav-div-ul-li">
-                                   <p className="nav-ul-li-p hover-btn">about me</p>
+                               <li className="noulstyle nav-div-ul-li top-bar-li">
+                                   <Link className="nav-ul-li-p hover-btn " to="/member/login">
+                                       about me
+                                   </Link>
                                </li>
                                <li className="noulstyle nav-div-ul-li">
                                    <p className="nav-ul-li-p"><img  className="hover-btn" src={github} /></p>

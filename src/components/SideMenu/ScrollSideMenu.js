@@ -3,7 +3,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function Sidebar() {
-    const [collapseShow, setCollapseShow] = React.useState("hidden");
     return (
         <>
             <nav className="border-1-s-g">

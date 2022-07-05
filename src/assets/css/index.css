@@ -45,7 +45,9 @@ html, body {
 .mar-auto-0{
     margin: 0 auto;
 }
-
+.mar-top-0{
+    margin-top: 0px;
+}
 .mar-top-30{
     margin-top: 30px;
 }
@@ -268,6 +270,16 @@ a.dropdown-menu{
     padding-left: 40px;
 }
 
+.padding-rl-80p-t-40p{
+    padding-top: 40px;
+    padding-right: 40px;
+    padding-left: 40px;
+}
 .hljs-attribute{
     color: #cc7730;
+}
+
+.top-bar-li{
+    font-size: 14px;
+
 }
