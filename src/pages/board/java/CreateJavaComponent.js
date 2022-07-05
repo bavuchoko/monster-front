@@ -19,7 +19,7 @@ class CreateJavaComponent extends Component{
                         <EditComponent />
 
                         <div className="padding-rl-80p-t-40p">
-                        {/*<CkEditor5 />*/}
+
                     </div>
                     </div>
                 </div>
