@@ -14,13 +14,13 @@ class CreateJavaComponent extends Component{
                     <ScrollSideMenu />
                 </div>
                 <div className="width-100per-200p mar-auto-0">
-<<<<<<< HEAD
+
                     <div className="padding-trl-80p">
-                    <EditComponent />
-=======
-                    <div className="padding-rl-80p-t-40p">
-                    <CkEditor5 />
->>>>>>> 0af5ae96b21151bc0796cfe65a40ab08f64349cf
+                        <EditComponent />
+
+                        <div className="padding-rl-80p-t-40p">
+                        {/*<CkEditor5 />*/}
+                    </div>
                     </div>
                 </div>
             </div>
