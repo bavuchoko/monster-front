@@ -1,75 +1,60 @@
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-import React, { useState } from 'react'
-import Axios from 'axios'
-import {useDispatch} from 'react-redux';
-import {AuthenticationApi} from '../../apis/AuthenticationApi'
-
-function Login(props) {     //파라미터로 props 넣어줘야함! 로그인 완료된 후 처음 화면으로 돌아가게 하기 위함
-
-    // const dispatch = useDispatch();
-
-    const [username, setUsername] = React.useState(" ")
-    const [Password, setPassword] = React.useState(" ")
-
-    const onUsernameHandler = (event) => {
-        setUsername(event.currentTarget.value)
+function Login() {
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+    const user ={
+        username:'',
+        password:'',
+        grant_type: 'password'
+    };
+    // input data 의 변화가 있을 때마다 value 값을 변경해서 useState 해준다
+    const handleInputId = (e) => {
+        setUsername(e.target.value)
     }
 
-    const onPasswordHandler = (event) => {
-        setPassword(event.currentTarget.value)
+    const handleInputPw = (e) => {
+        setPassword(e.target.value)
     }
 
-    const onSubmitHandler = (event) => {
-        event.preventDefault(); //리프레시 방지-> 방지해야 이 아래 라인의 코드들 실행 가능
+    const onClickLogin = () => {
+        user.username = username;
+        user.password = password;
+        console.log(user);
+        axios.post('/oauth/token', user, {
 
-        // console.log('Email', Email);
-        // console.log('Password', Password);
-
-
-        let body={
-            username: username,
-            password: Password
-        }
-
-        //디스패치로 액션 취하기
-        // dispatch(AuthenticationApi(body))
-        //     .then(response => {
-        //         if(response.payload.loginSuccess) {
-        //             props.history.push('/')             //리액트에서 페이지 이동하기 위해서는 props.history.push() 이용.
-        //             // 로그인 완료된 후 처음 화면(루트 페이지-landingpage로)으로 돌악가게 하기
-        //         } else{
-        //             alert(' Error')
-        //         }
-        //     })
-
-
-
+        })
+            .then(res => console.log(res))
+            .catch()
     }
 
-    return (
-        <div style={{
-            display: 'flex', justifyContent: 'center', alignItems: 'center',
-            width: '100%', height: '100vh'
-        }}>
 
+    // // 페이지 렌더링 후 가장 처음 호출되는 함수
+    // useEffect(() => {
+    //         axios.get('/user_inform/login')
+    //             .then(res => console.log(res))
+    //             .catch()
+    //     },
+    //     // 페이지 호출 후 처음 한번만 호출될 수 있도록 [] 추가
+    //     [])
 
-            <form style={{display: 'flex', flexDirection: 'column'}}
-                  onSubmit={onSubmitHandler}
-            >
-
-                <label>Email</label>
-                <input type="username" value={username} onChange={onUsernameHandler}/>
-                <label>Password</label>
-                <input type="password" value={Password} onChange={onPasswordHandler}/>
-
-                <br />
-                <button>
-                    Login
-                </button>
-            </form>
-
+    return(
+        <div>
+            <h2>Login</h2>
+            <div>
+                <label htmlFor='username'>ID : </label>
+                <input type='text' name='Username' value={username} onChange={handleInputId} />
+            </div>
+            <div>
+                <label htmlFor='password'>PW : </label>
+                <input type='password' name='password' value={password} onChange={handleInputPw} />
+            </div>
+            <div>
+                <button type='button' onClick={onClickLogin}>Login</button>
+            </div>
         </div>
     )
-};
+}
 
-export default Login
+export default Login;
