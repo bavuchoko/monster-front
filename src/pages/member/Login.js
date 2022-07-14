@@ -22,11 +22,14 @@ function Login() {
         user.username = username;
         user.password = password;
         console.log(user);
-        axios.post('/oauth/token', user, {
+        axios.get('/api/hello');
 
-        })
-            .then(res => console.log(res))
-            .catch()
+
+        // axios.post('/api/oauth/token', user, {
+        //
+        // })
+        //     .then(res => console.log(res))
+        //     .catch()
     }
 
 
