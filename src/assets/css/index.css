@@ -29,6 +29,9 @@ html, body {
     border-bottom: 1px solid #e1d6d6;
     box-shadow: 0 6px 6px 0 rgb(0 0 0 / 20%);;
 }
+.height-35p{
+    height: 35px;
+}
 .height-40p{
     height: 40px;
 }
@@ -54,7 +57,9 @@ html, body {
 .mar-auto{
     margin:0 auto;
 }
-
+.width-40p{
+    width: 40px;
+}
 .width-80per{
     width: 80%;
 }
@@ -63,6 +68,9 @@ html, body {
 }
 .width-70per{
     width: 70%;
+}
+.width-100p{
+    width: 100px;
 }
 .width-150p{
     width: 150px;
@@ -290,23 +298,19 @@ a.dropdown-menu{
     width: 100%;
 }
 
-.login-h2{
+.h2-head{
     width: 100%;
     border-bottom: 1px solid #d5d2d2;
     padding-bottom: 20px;
     color: #525151;
 }
 
-.login-from{
-    width: 80%;
-    height: 500px;
-    margin: 0 auto;
 
-}
 
 
 
 .form-tag > div > div > input{
+    text-indent: 15px;
     border-radius: 3px;
     margin: 0;
     padding: 0;
@@ -314,6 +318,9 @@ a.dropdown-menu{
     height: 40px;
     margin-bottom: 5px;
     border: 1px  solid #c4c2c2;
+}
+.form-tag > div > div > input:focus{
+    outline: none;
 }
 .form-tag > div > div > button{
     border-radius: 3px;
@@ -324,6 +331,9 @@ a.dropdown-menu{
     border: 1px  solid  #FEB139;
     background-color: #293462;
     color: #FEB139;
+}
+.form-tag > div > div > button:active{
+    background-color: #1a5181;
 }
 
 .border-bot-1p-w{
@@ -377,4 +387,81 @@ a.dropdown-menu{
 .text-center{
     text-align: center;
     line-height: 80px;
+}
+.login-from{
+    width: 602px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+.width-auto{
+    width: auto;
+}
+
+.write_btn{
+    font-size: 15px;
+    line-height: 35px;
+    text-align: center;
+    width: 100px;
+    height: 35px;
+    border-radius: 3px;
+    border: 2px solid #FEB139;
+    background-color: #293462;git
+}
+.write_btn > a {
+    color: #FEB139;
+}
+.table-div{
+    width: 75%;
+    margin: 0 auto;
+    padding-top: 50px;
+    height: auto;
+    background-color: #728388;
+
+}
+
+.content-container{
+    border-bottom: 1px solid #cecece;
+    margin-bottom: 50px;
+
+}
+
+.margin-left-auto{
+    margin-left: auto;
+}
+.margin-right-auto{
+    margin-right: auto;
+}
+.content-title{
+    color: #3a3b3f;
+    padding-left: 4px;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 40px;
+    margin-bottom: 20px;
+
+}
+
+
+.content-writer{
+    padding-left: 4px;
+    font-size: 16px;
+    line-height: 40px;
+}
+
+.content-body{
+    margin-bottom: 20px;
+}
+.border-circle{
+    border-radius: 50%;
+}
+.div-img{
+    overflow: hidden;
+}
+.margin-right-10p{
+    margin-right: 10px;
+}
+.content-footer{
+    padding-top: 5px;
+    padding-bottom: 5px;
 }

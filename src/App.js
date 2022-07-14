@@ -11,6 +11,12 @@ function App() {
   return (
       <BrowserRouter>
           <SystemNavBar />
+
+          <div>
+
+
+          </div>
+
           <Routes>
               <Route path="/" element={<Board />} />
               <Route path="/board/*" element={<Board />} />

@@ -72,27 +72,27 @@ function Login() {
             <div className="width-100per-200p mar-auto-0">
                <div className="padding-rl-80p-t-40p">
 
-                   <h2 className="login-h2">로그인</h2>
-                        <div className="login-from pad-t85p disp-flex">
-                            <div className="profile-div">
-                                <img  className="" src={man} />
-                            </div>
-                            <form className="form-tag">
-                                <div className="width-100per pad-t68p">
-                                    <div>
-                                        <label htmlFor='username'></label>
-                                        <input type='text' name='Username' value={username} onChange={handleInputId} />
-                                    </div>
-                                    <div>
-                                        <label htmlFor='password'></label>
-                                        <input type='password' name='password' value={password} onChange={handleInputPw} />
-                                    </div>
-                                    <div>
-                                        <button type='button' className="hover-btn" onClick={onClickLogin}>
-                                            <FontAwesomeIcon icon={faPowerOff} />로그인</button>
-                                    </div>
+                   <h2 className="login-h2 h2-head">로그인</h2>
+                        <div className="disp-flex login-from pad-t85p ">
+                                <div className="profile-div">
+                                    <img  className="" src={man} />
                                 </div>
-                            </form>
+                                <form className="form-tag">
+                                    <div className="width-100per pad-t68p">
+                                        <div>
+                                            <label htmlFor='username'></label>
+                                            <input type='text' name='Username' value={username} onChange={handleInputId} placeholder="username@email.com"/>
+                                        </div>
+                                        <div>
+                                            <label htmlFor='password'></label>
+                                            <input type='password' name='password' value={password} onChange={handleInputPw} placeholder="password"/>
+                                        </div>
+                                        <div>
+                                            <button type='button' className="hover-btn" onClick={onClickLogin}>
+                                                <FontAwesomeIcon icon={faPowerOff} />로그인</button>
+                                        </div>
+                                    </div>
+                                </form>
                         </div>
                </div>
             </div>
