@@ -362,3 +362,19 @@ a.dropdown-menu{
     display: inline-block;
     margin-right: 10px;
 }
+.main-logo-top-div > img{
+    padding-top: 10px;
+    display: inline-block;
+    width: 100%;
+    height: auto;
+}
+.fa-house-circle-check{
+    font-size: 30px;
+    display: inline-block;
+    color: #262525;
+
+}
+.text-center{
+    text-align: center;
+    line-height: 80px;
+}
