@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import qs from "qs"
 function Login() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const headers = {
+        'Content-Type' : 'application/x-www-form-urlencoded',
+        'Authorization' : 'Basic bXlBcHA6cGFzcw=='
+    }
     const user ={
         username:'',
         password:'',
-        grant_type: 'password'
+        grantType: 'password'
     };
     // input data 의 변화가 있을 때마다 value 값을 변경해서 useState 해준다
     const handleInputId = (e) => {
@@ -21,15 +25,26 @@ function Login() {
     const onClickLogin = () => {
         user.username = username;
         user.password = password;
-        console.log(user);
-        axios.get('/api/hello');
 
+        // axios.get('/api/hello').then(r => console.log(r))
 
-        // axios.post('/api/oauth/token', user, {
-        //
-        // })
-        //     .then(res => console.log(res))
-        //     .catch()
+        axios.post('/api/oauth/token',  qs.stringify({
+            grant_type: "password",
+            username,
+            password
+        }), {
+            headers
+        })
+            .then(res => console.log(res))
+            .then(res => {
+                if(res.ACCESS_TOKEN){
+                    localStorage.setItem(
+                        'login-token',res.ACCESS_TOKEN
+                    )
+                }
+                console.log(res.ACCESS_TOKEN)
+            })
+            .catch()
     }
 
 
@@ -45,6 +60,7 @@ function Login() {
     return(
         <div>
             <h2>Login</h2>
+            <form>
             <div>
                 <label htmlFor='username'>ID : </label>
                 <input type='text' name='Username' value={username} onChange={handleInputId} />
@@ -56,6 +72,7 @@ function Login() {
             <div>
                 <button type='button' onClick={onClickLogin}>Login</button>
             </div>
+            </form>
         </div>
     )
 }
