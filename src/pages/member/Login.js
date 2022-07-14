@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import qs from "qs"
+import man from '../../assets/image/man.png';
+import MemberlSideMenu from "../../components/SideMenu/MemberlSideMenu";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPowerOff } from "@fortawesome/free-solid-svg-icons";
 function Login() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
@@ -58,21 +62,40 @@ function Login() {
     //     [])
 
     return(
-        <div>
-            <h2>Login</h2>
-            <form>
-            <div>
-                <label htmlFor='username'>ID : </label>
-                <input type='text' name='Username' value={username} onChange={handleInputId} />
+
+        <div  className="width-70per mar-auto-0 disp-flex">
+
+            <div className="width-200p">
+                <MemberlSideMenu />
             </div>
-            <div>
-                <label htmlFor='password'>PW : </label>
-                <input type='password' name='password' value={password} onChange={handleInputPw} />
+
+            <div className="width-100per-200p mar-auto-0">
+               <div className="padding-rl-80p-t-40p">
+
+                   <h2 className="login-h2">로그인</h2>
+                        <div className="login-from pad-t85p disp-flex">
+                            <div className="profile-div">
+                                <img  className="" src={man} />
+                            </div>
+                            <form className="form-tag">
+                                <div className="width-100per pad-t68p">
+                                    <div>
+                                        <label htmlFor='username'></label>
+                                        <input type='text' name='Username' value={username} onChange={handleInputId} />
+                                    </div>
+                                    <div>
+                                        <label htmlFor='password'></label>
+                                        <input type='password' name='password' value={password} onChange={handleInputPw} />
+                                    </div>
+                                    <div>
+                                        <button type='button' className="hover-btn" onClick={onClickLogin}>
+                                            <FontAwesomeIcon icon={faPowerOff} />로그인</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+               </div>
             </div>
-            <div>
-                <button type='button' onClick={onClickLogin}>Login</button>
-            </div>
-            </form>
         </div>
     )
 }

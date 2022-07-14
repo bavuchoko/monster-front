@@ -20,7 +20,7 @@ class CreateJavaComponent extends Component{
 
                         <div className="padding-rl-80p-t-40p">
 
-                    </div>
+                        </div>
                     </div>
                 </div>
             </div>

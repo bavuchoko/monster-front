@@ -6,7 +6,7 @@ export default function Sidebar() {
     return (
         <>
             <nav className="border-1-s-g">
-                <div className="width-100per height-110p bac-color-blue tc-lh100-fs22">두루마리</div>
+                <div className="width-100per height-110p bac-color-293462 color-FEB139 tc-lh100-fs22">두루마리</div>
                     <div>
                         <ul className="noulstyle text-indent-20p">
                             <li className="items-center li-to-small-down-style">
