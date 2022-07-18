@@ -5,7 +5,9 @@ import man from '../../assets/image/man.png';
 import MemberlSideMenu from "../../components/SideMenu/MemberlSideMenu";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPowerOff } from "@fortawesome/free-solid-svg-icons";
+
 function Login() {
+const [ setCookie ] = useState()
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const headers = {
@@ -39,19 +41,16 @@ function Login() {
         }), {
             headers
         })
-            .then(res => console.log(res))
             .then(res => {
-                if(res.ACCESS_TOKEN){
-                    localStorage.setItem(
-                        'login-token',res.ACCESS_TOKEN
-                    )
-                }
-                console.log(res.ACCESS_TOKEN)
+                console.log(res.data['access_token'])
+                localStorage.setItem('refresh-token', res.data['refresh-token']);
+                setCookie('access-token', res.data['access_token']);
+                console.log(res.data['access_token'])
             })
             .catch()
     }
 
-
+    //
     // // 페이지 렌더링 후 가장 처음 호출되는 함수
     // useEffect(() => {
     //         axios.get('/user_inform/login')

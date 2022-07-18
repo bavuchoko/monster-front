@@ -6,8 +6,10 @@ import SystemNavBar from "./components/Headers/SystemNavBar.js";
 import Board from "./route/Board.js";
 import Document from "./route/Document.js";
 import Member from "./route/Member";
+import {useCookies} from "react-cookie";
 
 function App() {
+const [cookies, setCookie, removeCookie] = useCookies(['rememberEmail']);
   return (
       <BrowserRouter>
           <SystemNavBar />
